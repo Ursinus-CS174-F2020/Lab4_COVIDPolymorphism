@@ -76,6 +76,8 @@ public class COVID19 {
         uninfectedCount = new double[numHours];
         recoveredCount = new double[numHours];
         for (hour = 0; hour < numHours; hour++) {
+            Person minPerson = (Person)Numberable.getMin(people);
+            System.out.println(minPerson);
             for (int i = 0; i < people.length; i++) {
                 people[i].updateStatus(recoveryTime);
                 people[i].move(moveDist);

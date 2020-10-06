@@ -7,7 +7,7 @@ import java.awt.Color;
 import java.util.Random;
 
 
-public class Person {
+public class Person implements Numberable {
     // The three states a person can be in
     public static final int INFECTED = 0;
     public static final int UNINFECTED = 1;
@@ -158,6 +158,17 @@ public class Person {
         if (state == INFECTED) {
             ret = "sick";
         }
+        ret += " (" + x + ", " + y + ")";
         return ret;
+    }
+
+    
+    @Override
+    /**
+     * From the Numberable interface (our own creation), which has
+     * a min method
+     */
+    public double getNum() {
+        return x;
     }
 }
