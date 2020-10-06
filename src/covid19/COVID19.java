@@ -8,6 +8,7 @@ package covid19;
 import org.knowm.xchart.*;
 import java.util.Random;
 import java.util.ArrayList; 
+import java.util.Arrays;
 
 public class COVID19 {
     private Person[] people;
@@ -118,8 +119,14 @@ public class COVID19 {
         StdDraw.clear();
         StdDraw.enableDoubleBuffering();
         StdDraw.setPenColor(StdDraw.BLUE);
-        for (Person p : people) {
-            p.draw(drawSize);
+        Arrays.sort(people); // Use the comparable interface to sort
+        for (int i = 0; i < people.length; i++) {
+            if (i < people.length/2) {
+                people[i].draw(drawSize);
+            }
+            else {
+                people[i].draw(drawSize*2);
+            }
         }
         StdDraw.setPenColor(StdDraw.RED);
         StdDraw.text(0.07, 0.97, "Day " + hour/24);

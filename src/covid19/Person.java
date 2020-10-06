@@ -7,7 +7,7 @@ import java.awt.Color;
 import java.util.Random;
 
 
-public class Person implements Numberable {
+public class Person implements Numberable, Comparable {
     // The three states a person can be in
     public static final int INFECTED = 0;
     public static final int UNINFECTED = 1;
@@ -170,5 +170,23 @@ public class Person implements Numberable {
      */
     public double getNum() {
         return x;
+    }
+    
+    @Override
+    /** From the Comparable interface, which has sorting methods
+     * If this is less than the other, return a negative number
+     * If this is greater than the other, return a positive number
+     * If they are equal, return 0
+     */
+    public int compareTo(Object t) {
+        Person other = (Person)t;
+        int result = 0;
+        if (this.x < other.x) {
+            result = -1;
+        }
+        else if (this.x > other.x) {
+            result = 1;
+        }
+        return result;
     }
 }
