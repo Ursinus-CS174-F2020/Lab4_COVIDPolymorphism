@@ -3,7 +3,6 @@
  * spreading epidemic, A bunch of people are placed uniformly at random 
  * on a square grid, and a single one of them starts off infected.  
  */
-package covid19;
 
 import org.knowm.xchart.*;
 import java.util.Random;

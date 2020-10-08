@@ -1,7 +1,6 @@
 /**
  * The superclass for a person
  */
-package covid19;
 
 import java.awt.Color;
 import java.util.Random;

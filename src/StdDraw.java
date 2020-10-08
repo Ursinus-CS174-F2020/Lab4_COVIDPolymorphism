@@ -25,8 +25,6 @@
  *
  ******************************************************************************/
 
-package covid19;
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
